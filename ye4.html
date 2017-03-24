@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标移入移出改变样式</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+div{width: 150px;
+background-color: black;
+height: 150px;
+    padding-top: 5px;
+   margin: 20px auto;
+
+
+color: white}
+
+
+    </style>
+    <script type="text/javascript">
+
+        // JS实现选项卡切换
+
+        function mOver(obj) {
+    obj.style.border="10px solid red";
+
+}
+        function mOut(obj) {
+
+            obj.style.border="";
+        }
+
+    </script>
+
+</head>
+<body>
+<!-- HTML页面布局 -->
+
+<div  onmouseover="mOver(this)" onmouseout="mOut(this)">鼠标移入改变样式，移出恢复样式</div>
+
+</body>
+</html>
