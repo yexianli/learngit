@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>百度输入法</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+/*#y {
+    display: none;
+    list-style-type: none;0
+    padding-left: 0px;
+}*/
+        body,ul,li,button{margin:0;padding:0;}/*让ul和button对齐了*/
+        ul {
+            width: 100px;
+        }
+        #outer{width:70px;margin:10px auto;}/*让整体居中*/
+        #ime{margin-top:5px;background:#fff;border:1px solid #9a99ff;display:none;}
+        #ime li{width:100%;line-height:24px;display:inline-block;vertical-align:top;}
+        #close{border-top:1px solid #9a99ff;}/*加了一条顶线*/
+        #ime li a{color:#00c;padding:0 5px;display:block;text-decoration:none;}
+        #ime li a:hover{background:#d9e1f6;}
+
+
+div{width:auto;margin: 5px auto;}
+
+    </style>
+    <script type="text/javascript">
+
+        // JS实现选项卡切换
+function y(){
+    document.getElementsByTagName("ul")[0].style.display="block";
+}
+        window.onload = function ()
+        {
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oIme = document.getElementById("ime");
+            var oClose = document.getElementById("close");
+            var style = oIme.style;
+            oBtn.onclick = function()//触动按钮函数
+            {
+                style.display = style.display == "block" ? "none" : "block"
+            };//如果开着就关关着就开
+            oClose.onclick = function()//触动第三个li关闭函数
+            {
+                style.display = "none"
+            }
+        }
+    </script>
+
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div id="outer">
+<button onclick="y()">输入法</button>
+<ul id="ime">
+    <li><a href="javascript:;">手写</a></li>
+    <li><a href="javascript:;">拼音</a></li>
+    <li id="close"><a href="javascript:;">关闭</a></li>
+</ul>
+    </div>
+</body>
+</html>
