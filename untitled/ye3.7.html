@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style type="text/css">
+        div, ul, li,a{
+
+            padding: 0;
+            margin: 0  ;
+            text-align: center;
+
+
+
+
+
+        }
+        a{width:10px;
+            height:41px;
+            line-height:41px;
+            text-align:center;
+            background:gray;
+
+            }
+
+        #cal {
+            position: relative;
+            width: 290px;
+            margin: 10px auto;
+            background-color: powderblue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+        }
+
+        .f-text {
+            width: 280px;
+            height: 89px;
+            text-align: right;
+            padding: 5px auto;
+            background-color: lightskyblue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;display:table-cell;
+
+        }
+
+        ul {
+            list-style-type: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        ul li {
+            width: 66px;
+            height: 41px;
+
+            float: left;
+            /*padding: 10px;*/
+            background-color:dodgerblue;
+            margin: 6px 4px 0 2.5px;
+            border-radius: 10px;
+
+        }
+
+        ul li a {
+            display: block;
+            width: 66px;
+            height: 41px;
+            outline: none;
+            text-decoration: none;
+            color: greenyellow;
+            background-color: dodgerblue;
+            border-radius: 10px;
+
+        }
+
+        #formula {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            background: none;
+            padding: 1px 15px 0 5px;
+            border: 0;
+            font: 700 12px/1.5 Arial;
+            width: 260px;
+            /*text-align: right;*/
+            background-color: aqua;
+
+        }
+
+        li.btn-2 a {
+            width: 66px;
+            height: 90px;
+
+            line-height:90px;
+            text-align:center;
+            background:gray;
+            background-color: dodgerblue;
+
+        }
+
+        li.btn-3  {
+              width: 139px;
+              height: 41px;
+            margin: 6px 3px 3px 3px
+        }
+        li.btn-4  {
+            width: 66px;
+            height: 41px;
+            margin: 6px 3px 3px 3px
+
+        }
+
+    </style>
+
+    <script>
+        window.onload = function (event) {
+//            console.log(event,event.target,event.target.innerHtml,event.target.innerText)
+            var li = document.querySelectorAll("li");
+            for (var i = 0, len = li.length; i < len; i++) {
+                li[i].addEventListener("click", clcikLi, false);
+            }
+        }
+        function clcikLi(event) {
+            var str = event.target.innerText
+            console.log(str);
+
+        }
+    </script>
+
+</head>
+<body>
+<div id="cal">
+    <input class="f-text" type="text" readonly="readonly" maxlength="9" value="0"/>
+    <ul>
+        <li class="btn-1"><a href="javascript:void(0)">c</a></li>
+        <li class="btn-1"><a href="javascript:void(0)">%</a></li>
+        <li class="btn-1"><a href="javascript:void(0)">÷</a></li>
+        <li class="btn-1"><a href="javascript:void(0)">×</a></li>
+        <li><a href="javascript:void(0)">7</a></li>
+        <li><a href="javascript:void(0)">8</a></li>
+        <li><a href="javascript:void(0)">9</a></li>
+        <li class="btn-1"><a href="javascript:void(0)">-</a></li>
+        <li><a href="javascript:void(0)">4</a></li>
+        <li><a href="javascript:void(0)">5</a></li>
+        <li><a href="javascript:void(0)">6</a></li>
+        <li class="btn-1"><a href="javascript:void(0)">+</a></li>
+        <li><a href="javascript:void(0)">1</a></li>
+        <li><a href="javascript:void(0)">2</a></li>
+        <li><a href="javascript:void(0)">3</a></li>
+        <li class="btn-2"><a href="javascript:void(0)">=</a></li>
+        <li class="btn-3"><a href="javascript:void(0)">0</a></li>
+        <li class="btn-4"><a href="javascript:void(0)">.</a></li>
+    </ul>
+    <input id="formula" type="text" readonly="readonly" value=""/>
+</div>
+
+</body>
+</html>

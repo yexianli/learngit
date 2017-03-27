@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        #wrapper{border: 10px solid black}
+
+        div#navfirst  a{text-decoration: none;
+       color:black;
+            margin: 0 0 0 12px;}
+      div#navsecond a{text-decoration: none;
+      color:black;}
+        div#header,a#first{background-color: #bebebe;
+
+            width:1100px;
+            height: 90px;
+            background-color: #bebebe;
+
+            overflow: hidden;
+
+
+       }
+        div#header a#first{
+            color:white;
+            text-decoration: none;
+
+        }
+        div#header a#first h1{padding-top: 50px ;
+        float: left}
+
+
+
+        div#navfirst
+        {
+            height: 60px;
+            width: 1100px;
+            text-align: center;
+
+            border: 0;
+            background: #fff;
+            color: #bebebe;
+
+        }
+
+        div#navfirst ul#menu
+        {
+            height: 55px;
+            width: 1100px;
+            background: transparent url(/ui/bg.gif) top left no-repeat;
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+        }
+
+        div#navfirst ul#menu li
+        {
+            padding-top: 20px;
+
+            list-style:none;
+            position:absolute;
+            text-align: center;
+            color: #bebebe;
+        }
+        #h	{left:5px;width:155px;}
+        #b	{left:155px;width:157px;}
+        #s	{left:312px;width:167px;}
+        #d 	{left:479px;width:158px;}
+        #x	{left:637px;width:101px;}
+        #m	{left:738px;width:185px;}
+        #w	{left:923px;width:177px;}
+        div#navsecond
+        {
+            float: left;
+
+            padding: 13px;
+            border: 0;
+            width: 136px;
+            background : transparent;
+            background-color: #b6b6b6;
+
+        }
+        div#navsecond h2{padding-top: 5px}
+        div#navsecond li, div#sidebar li	{
+            list-style: none;
+            margin-top: 3px;
+            padding:1px 5px;
+        }
+
+
+        body#homefirst div#maincontent div#update
+        {
+            width: 300px;
+            float: left;
+            margin:0;
+        }
+        div#maincontent
+        {
+            float: left;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 740px;
+            background: transparent;
+        }
+
+        div#sidebar
+        {
+            float: left;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 180px;
+            background: transparent;
+        }
+
+        div#footer
+        {
+            clear: both;
+            margin: 0;
+            padding: 0;
+
+            width: 1100px;
+            height: 50px;
+            background: #b6b6b6;
+            border-top: 10px solid #fff;
+            border-bottom: 10px solid #fff;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        div#footer p
+        {margin: auto;
+            font-size: smaller;
+            padding-top: 2px;
+        }
+
+        body#homefirst div#maincontent div#w3 h2
+        {
+            margin-top:20px;
+        }
+      div#maincontent div#w3
+        {
+            text-align:center;
+border: 0;
+          margin-top: 50px;
+        }
+        div#maincontent div#w2{
+            text-align: center;
+            margin-top: 20px;
+        }
+        div#maincontent p{margin-top: 10px}
+        div#searchui
+        {
+            margin:15px 0 15px 5px;
+            padding:0;
+        }
+
+        div#searchui p
+        {
+            margin:0 0 5px 0;
+            padding:0;
+        }
+
+        #searchui label
+        {
+            margin:0 0 0 2px;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            font-size:11px;
+        }
+
+        #searchui input.button
+        {
+            padding:0;
+            margin:0;
+            background:#AE4141;
+            font:12px Verdana, Arial, Helvetica, sans-serif;
+            color:#FFFFFF;
+            width:25px;
+            height:20px;
+        }
+
+        #searchui input.box
+        {
+            margin:0 0 0 2px;
+            width:135px;
+            height:20px;
+            background:#fdfdfd;
+            font:12px Verdana, Arial, Helvetica, sans-serif;
+        }
+        div#sidebar
+        {
+            float: left;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 180px;
+            background: transparent;
+        }
+        div#sidebar h2{margin-top: 6px}
+        div#sidebar  a{color:red}
+        div#wrapper {
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+            width: 1129px;
+            text-align: left;
+            background: transparent url(/ui/wrapper.gif) top left repeat-y;
+        }
+        html 	{
+            min-width: 966px;
+            background: #f9f9f9;
+            overflow:scroll;
+            overflow-x:hidden;
+        }
+
+        body
+        {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: #f9f9f9 url(/ui/holder.gif) top center repeat-y;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<a id="first" href="www.schoolo.com"><h1>W3school</h1></a></div>
+
+<div id="navfirst">
+    <ul id="menu">
+        <li id="h"><a href="w3chool">HTML/CSS</a></li>
+        <li id="b"><a href="w3chool">JavaScript</a></li>
+        <li id="s"><a href="w3chool">Server Side</a></li>
+        <li id="d"><a href="w3chool">ASP.NET</a></li>
+        <li id="x"><a href="w3chool">XML</a></li>
+        <li id="m"><a href="w3chool">Web Services</a>  </li>
+        <li id="w"><a href="w3chool">Web Building</a></li>
+    </ul></div>
+<div id="navsecond">
+   <h2>HTML教程</h2>
+    <ul>
+        <li><a href="w3chool">HTML</a></li>
+        <li><a href="w3chool">HTML5</a></li>
+        <li><a href="w3chool">XHTML</a></li>
+        <li><a href="w3chool">CSS</a></li>
+        <li><a href="w3chool">CSS3</a></li>
+        <li><a href="w3chool">TCP/IP</a></li>
+    </ul>
+    <h2>浏览器脚本</h2>
+    <ul>
+    <li><a href="w3chool">Java Script</a></li>
+    <li><a href="w3chool">HTML DOM</a></li>
+    <li><a href="w3chool">JQery</a></li>
+    <li><a href="w3chool">JQery Mobie</a></li>
+    <li><a href="w3chool">AJAX</a></li>
+    <li><a href="w3chool">JSON</a></li>
+    <li><a href="w3chool">DHTML</a></li>
+    <li><a href="w3chool">E4X</a></li>
+    <li><a href="w3chool">WMLScript</a></li>
+    </ul>
+    <h2>服务器脚本</h2>
+    <ul>
+    <li><a href="w3chool">PHP</a></li>
+    <li><a href="w3chool">SQL</a></li>
+    <li><a href="w3chool">ASPL</a></li>
+    <li><a href="w3chool">ADO</a></li>
+    <li><a href="w3chool">VBSript</a></li>
+    </ul>
+
+</div>
+<div id="maincontent">
+    <div id="w3">
+
+    <h2>领先Web技术教程-全部免费</h2>
+    <p>在w3school，你可以找到你所需要的所有的网站建设教程。</p>
+    <p>从基础的HTML到CSS，乃至进阶的XML，SQL，JS,PHP和ASP.NET。</p>
+    <p><strong>从左侧菜单选择你需要的教程！</strong></p>
+</div>
+<div id="w2">
+    <h2>完整的网站技术参考手册</h2>
+    <p>我们的参考手册涵盖了网站技术的方方面面</p>
+    <p>其中包括W3C的标准技术：HTML,CSS,XML。以及其他的技术，诸如javaScript,PHP,SQL等等</p>
+</div>
+</div>
+    <div id="sidebar">
+        <ul id="searchui">
+        <form method="get" id="searchform" action="http://www.google.com.hk/search">
+            <p><label for="searched_content">Search:</label></p>
+            <p><input type="hidden" name="sitesearch" value="w3school.com.cn"></p>
+            <p>
+                <input type="text" name="as_q" class="box" id="searched_content" title="在此输入搜索内容。">
+                <input type="submit" value="Go" class="button" title="搜索！">
+            </p>
+        </form>
+       <h2>参考手册</h2>
+            <ul>
+                <li><a href="ww.124">HTML/HTML标签</a></li>
+                <li><a href="ww.124">HTML颜色</a></li>
+                <li><a href="ww.124">CSS 1.2.3</a></li>
+                <li><a href="ww.124">JavaScript</a></li>
+                <li><a href="ww.124">HTML DOMO</a></li>
+                <li><a href="ww.124">jQuery</a></li>
+            </ul>
+            <h2>字符集</h2>
+            <ul>
+                <li><a href="ww.124">HTML 字符集</a></li>
+                <li><a href="ww.124">HTML ASCLL</a></li>
+                <li><a href="ww.124">HTML ISO-8859-1</a></li>
+                <li><a href="ww.124">HTML 符号</a></li>
+            </ul>
+            <h2>实例/案例</h2>
+                <ul>
+                    <li><a href="ww.124">HTML</a></li>
+                    <li><a href="ww.124">CSS实例</a></li>
+                    <li><a href="ww.124">XML实例</a></li>
+                    <li><a href="ww.124">JavaScript</a></li>
+                    <li><a href="ww.124">Java cript对象实例</a></li>
+
+                </ul>
+
+
+
+
+
+
+</div>
+<div id= "footer">
+    <p>W3School提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站的内容随之而来的风险与本站无关W3School简体中
+        文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任</p>
+    <p>当使用本站时，代表您已接受了</p>
+</div>
+</div>
+</body>
+</html>

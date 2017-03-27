@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>幻灯片</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        margin-top: 30px;
+    }
+
+    #showImage {
+        padding: 5px 20px;
+        color: #fff;
+        background-color: #0f88eb;
+        text-decoration: none;
+    }
+
+    #picBox {
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+    }
+
+    #picBox .pic-content {
+        width: 800px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+
+    #picBox img {
+        position: absolute;
+        width: 600px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    #picBox a {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        left: 0;
+        top: 50%;
+        margin-top: -20px;
+    }
+
+    #picBox .next {
+        left: auto;
+        right: 0;
+    }
+
+    #picBox span {
+        z-index: 1;
+        color: white;
+        cursor: pointer;
+        font-size: 55px
+    }
+</style>
+<body>
+<div class="content">
+    <a href="javascript:void(0)" id="showImage">打开图片预览</a>
+</div>
+<div id="picBox">
+    <div class="pic-content">
+        <a class="last"><span><</span></a>
+
+        <a class="next"><span>></span></a>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+    /**
+     * 对象复制
+     * @param obj
+     * @param copyObj
+     * @returns {*}
+     */
+    function extend(obj, copyObj) {
+        for (var o in copyObj) {
+            obj[o] = copyObj[o]
+        }
+        return obj
+    }
+    function imagePreview(opts) {
+        var defaultOpts = {
+            imageList: [], // 图片数组
+            index: 0       // 初始显示index
+        };
+        opts = extend(defaultOpts, opts);
+        var imageList = opts.imageList;
+        var index = opts.index;
+        var n = imageList.length;
+        if (n === 0) {
+            return
+        }
+        var imageBox = $('#picBox')
+        var img = imageBox.find('img')
+        imageBox.show()
+        imageBox.find('.next').on('click', function () {
+
+            console.log(index)
+            img.attr('src', imageList[index++]);
+            if (index > n) {
+                index = 0;
+            }
+        })
+        imageBox.find('.last').on('click', function () {
+            img.attr('src', imageList[index--]);
+            if (index < 0) {
+                index = n - 1;
+
+            }
+            return false;
+        })
+
+    }
+
+    $(document).ready(function () {
+        $('#showImage').on('click', function () {
+            var imageList = ["images/s1.jpg", "images/s2.jpg", "images/s3.jpg"]
+            imagePreview({
+                imageList: imageList
+            })
+        })
+    })
+</script>
+</body>
+</html>

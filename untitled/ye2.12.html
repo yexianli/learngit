@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body,ul,li，p{margin: 0;
+        padding: 0;
+        font-size: smaller;}
+        div{width:100px;
+        margin:0 auto ;}
+        p{border: 2px solid white;
+        margin-bottom: 0px;}
+        span{color:dodgerblue;}
+        ul{list-style-type: none;
+            border: 2px solid white;
+            margin-bottom: 10px;
+        }
+        a:hover{color:yellow;}
+#a{width: 500px;
+align-content: center}
+    </style>
+    <script type="text/javascript">
+var ola=document.getElementsByTagName("label")[0];
+var osp=document.getElementsByTagName("a")[0];
+
+ var checkAll=function () {
+
+
+     var oin = document.getElementsByTagName("input");
+     for (var i = 0; i < oin.length; i++) {
+         oin[i].checked = true;
+     }
+ }
+
+
+
+
+    </script>
+</head>
+<body>
+<div>
+     <p><input type="checkbox" onclick="checkAll(); "/><label>全选</label> <a href="javascript:;">反选</a></p>
+<ul><li><input type="checkbox"/>选项（一）</li>
+    <li><input type="checkbox"/>选项（二）</li>
+    <li><input type="checkbox"/>选项（三）</li>
+    <li><input type="checkbox"/>选项（四）</li>
+    <li><input type="checkbox"/>选项（五）</li>
+    <li><input type="checkbox"/>选项（六）</li>
+    <li><input type="checkbox"/>选项（七）</li>
+    <li><input type="checkbox"/>选项（八）</li>
+    <li><input type="checkbox"/>选项（九）</li>
+    <li><input type="checkbox"/>选项（十）</li>
+</ul>
+
+</div>
+<center>1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</center>
+</body>
+</html>

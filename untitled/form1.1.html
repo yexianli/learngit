@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form onsubmit="return beforeSubmit(this)">
+    <div>title：<input type="text"></div>
+    <div>content：<input type="text"></div>
+    <!--<input type="submit" value="提交">-->
+     <button type="submit">submit</button>
+</form>
+
+<script src="./js/jquery-3.1.1.js"></script>
+
+<script>
+    function beforeSubmit(form)
+    {
+        return confirm('确认提交 ' );
+    }
+
+
+        $('button').on('click', function () {
+
+            $('form').on('submit', function () {
+                var title = $('inpur[name=title]').val(),
+                    content = $('textarea').val();
+
+                $.ajax({
+                    type: 'post', // 提交方式 get/post
+                    url: 'form1.1.html', // 需要提交的 url
+                    data: {
+                        'title': title,
+                        'content': content
+                    },
+                    success: function (data) { // data 保存提交后返回的数据，一般为 json 数据
+// 此处可对 data 作相关处理
+                        alert('提交成功！');
+                    }
+                })
+                return false; // 阻止表单自动提交事件
+            });
+        });
+
+</script>
+
+</body>
+</html >

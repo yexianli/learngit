@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层效果</title>
+    <style type="text/css">
+        #da{
+            width: 400px;
+            margin: 0 auto;
+
+        }
+      #li{width:400px;
+            height: 30px;
+            display: none;
+            background-color:white;
+
+        border:1px solid aliceblue;}
+        h2{font-size:15px;text-align:right;
+            background:#FC0;border-bottom:1px solid #f90;padding:1px;
+            ;
+
+        }
+        h2 span{color:#f90;
+            /*这是啥意思*/
+            cursor:pointer;
+            background:#fff;
+            border:1px solid #f90;
+            padding:0 2px;}
+        #ye{width:400px;
+        height: 120px;
+        display: none;
+        background-color: #9a99ff;
+            border: 1px solid aliceblue}
+        button{margin-bottom: 100px;}
+        /*css样式*/
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var obu =document.getElementsByTagName("button")[0];
+            var iye=document.getElementById("ye");
+            var ili=document.getElementById("li");
+            obu.onclick=function () {
+iye.style.display="block";
+ili.style.display="block";
+        };
+        cha.onclick=function () {
+            iye.style.display="none";//由小部分触发整体
+            ili.style.display="none";
+        }
+        };
+        // JS实现选项卡切换
+
+    </script>
+</head>
+<body>
+<!-- HTML页面布局 -->
+
+<center><button>弹出层</button></center>
+<div id="da">
+<div id="li"><h2 ><span id="cha">x</span></h2></div>
+<div id="ye"></div>
+</div>
+</body>
+</html>

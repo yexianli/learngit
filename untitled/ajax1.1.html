@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        a:hover {
+            color: #ff9900;
+        }
+    </style>
+    <script src="./js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function loadXMLDoc() {
+            var xmlhttp;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    console.log(xmlhttp.responseText)
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "/getAjax?name=1&pwd=123", true);
+            xmlhttp.send();
+        }
+
+        $(document).ready(function () {
+            var js = document.getElementById('js')
+            js.addEventListener('click', loadXMLDoc, false)
+        })
+
+        $(function () {
+            var box = $('#jq')
+//            box[0].addEventListener("click", clickbutton, false)
+           box.on("click", function(event) {
+               $.ajax({
+                   url: "/postAjax",
+                   type: 'post',
+                   data: {
+                       one: 'hello',
+                       two: 'world'
+                   },
+                   success: function (data) {
+                       console.log(data)
+                   }
+               });
+            });
+        })
+    </script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<div>
+    <button type="button" id="js">请求数据</button>
+    <button type="button" id="jq">JQuery ajax请求数据</button>
+    <div id="myDiv"></div>
+</div>
+
+</body>
+</html>

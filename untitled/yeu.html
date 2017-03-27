@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>控制div属性</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+        #a{}
+        #a ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            padding-top:6px;
+            padding-bottom:6px;}
+        #a ul li{
+            display:inline;
+        }
+        #a p{
+            display: block;
+            width: 100px;
+            height: 150px;
+            background-color: blue;
+           margin-left: 50px;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        // JS实现选项卡切换
+        function dw(){
+            var y =document.getElementsByTagName('p')[0];
+            y.style.width="150px";
+
+        }
+        function de(){
+           y.style.height="250px";
+
+        }
+
+        function dr(){
+            document.getElementsByTagName('p')[0].style.backgroundColor="yellow";
+
+        }
+
+        function dt(){
+            document.getElementsByTagName('p')[0].style.display="none";
+
+        }
+        function dy(){
+            document.getElementsByTagName('p')[0].style.width="100px";
+            document.getElementsByTagName('p')[0].style.height="150px";
+            document.getElementsByTagName('p')[0].style.backgroundColor="blue";
+            document.getElementsByTagName('p')[0].style.display="block";
+        }
+
+
+    </script>
+
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div id="a">
+    <ul >
+        <li><button  onclick="dw()">变宽</button></li>
+        <li><button onclick="de()"> 变高</button></li>
+        <li><button onclick="dr()"> 变色</button></li>
+        <li><button onclick="dt()"> 隐藏</button></li>
+        <li><button onclick="dy()"> 重置></button></li>
+    </ul>
+    <p></p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数传参改变div任意属性值</title>
+    <style type="text/css">
+        /*css样式制作*/
+        ul{list-style-type: none;}
+        ul {float: left}
+        dd dl{float: left;
+        width: 10px;
+        height: 20px;
+        background-color: #0F86F0;
+        margin-right: 3px;}
+/*#da{width: 300px;*/
+/*margin: 0 auto;*/
+/*}*/
+        /*#er{*/
+            /*margin-bottom: 10px;*/
+        /*}*/
+        /*#san{margin-bottom: 10px;}*/
+        /*#si{margin-bottom: 10px;*/
+        /*}*/
+        /*#wu{width: 200px;*/
+        /*height: 200px;*/
+        /*background-color: black;*/
+        /*color: snow;*/
+        /*font-size: small}*/
+
+
+        </style>
+
+    <script type="text/javascript">
+        // JS实现选项卡切换
+        window.onload=function () {
+            var obu=document.getElementsByTagName("button");
+            var oin=document.getElementsByTagName("input");
+            var di=document.getElementById('wu');
+           var  a=3;
+            obu[0].onclick=function () {
+                di.style.backgroundColor=oin[1].value;//oin[1].value原来去掉双引号就行了
+            };
+            obu[1].onclick=function () {
+                //di.style.backgroundColor="red";//我自己的编码
+                di.removeAttribute("style");//答案的编码
+            }
+
+        };
+
+        </script>
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div id="da">
+<div id="er">属性名:<input  type="text" value="background"></div>
+<div id="san">属性值:<input  id="liu" type="text" value="yellow"></div>
+  <div id="si"><button >确定</button>
+      <button>重置</button></div>
+ <center><div id="wu">在上方输入框输入"属性名"及"属性值",点击确定按钮查看效果。</div>
+     <dd>
+         <dl>1</dl>
+         <dl>2</dl>
+         <dl>3</dl>
+
+     <dl>1</dl>
+     <dl>2</dl>
+     <dl>3</dl>
+
+     <dl>1</dl>
+     <dl>2</dl>
+         <dl>3</dl>
+ </center>
+
+     </dd>
+
+
+</div>
+<div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li></ul>
+</div>
+<div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li></ul>
+</div>
+</body>
+</html>

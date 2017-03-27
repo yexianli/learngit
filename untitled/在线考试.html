@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>在线考试报名</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body,div,input,p,span{margin: 0;
+        padding: 0;
+        align-content:center;
+            vertical-align:middle;
+        }
+       #con{ width: 500px;
+        margin: 10px 500px;}
+        .span1{font-size: 250%;
+             margin-left: 50px
+         }
+        .span2{
+                   margin-left: 50px
+               }
+        #head{color: #6699FF;
+            font-size: 500%}
+        a{color:#0f88eb;}
+        a:hover{color: #6699FF}
+        #login{display: none;}
+        .a1{}
+
+        button{width:300px;
+        height: 41px;
+        background: #0f88eb;
+        color:#fff;
+        margin-top: 10px;
+            border-radius: 3px;}
+        input{
+            width:300px;
+            height: 41px;}
+        #login1{display: none;}
+
+
+    </style>;
+    <script>
+        window.onload=function () {
+            var a=document.getElementsByTagName("a");
+
+            var login=document.getElementById("login")
+            var shu=document.getElementById("shu")
+            var login1=document.getElementById("login1")
+            var reginster=document.getElementById("reginster")
+            a[0].onclick=function () {
+                 login.style.display="none";
+                reginster.style.display="block";
+                login1.style.display="none";
+
+            };
+            a[1].onclick=function () {
+                login.style.display="block";
+                reginster.style.display="none";
+                login1.style.display="none";
+
+            };
+            a[3].onclick=function () {
+                login.style.display="block";
+                reginster.style.display="none";
+                login1.style.display="none";
+
+            };
+            shu.onclick=function () {
+                login.style.display="none";
+                reginster.style.display="none";
+                login1.style.display="block";
+
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+   <center> <p id="head">在线考试报名系统</p></center>
+     <div id="con">
+
+        <p><a><span class="span1">注册</span></a>
+        <a><span class="span1">登录</span></a></p>
+
+    <div id="reginster">
+        <form>
+        <input type="text" placeholder="学号" aria-describedby="sizing-addon1">
+
+
+
+        <input type="text"  placeholder="姓名" aria-describedby="sizing-addon2">
+
+
+
+        <input type="password"  placeholder="密码(密码不小于6位)" aria-describedby="sizing-addon3">
+
+    <button  type="submit">注册</button>
+         </form>
+</div>
+         <div id="login" >
+             <form>
+            <input type="text" placeholder="学号" aria-describedby="sizing-addon1">
+                 <input type="password"  placeholder="密码" aria-describedby="sizing-addon2">
+                 <button  type="submit">登录</button>
+                 <div><a id="shu">忘记密码</a></div>
+             </form>
+    </div>
+          <div id="login1">
+             <form>
+        <input type="text"  placeholder="姓名">
+        <input type="text"  placeholder="学号">
+        <button  type="submit">登录</button>
+        <div><span class="span2"><a class="a1">学号验证登录</a></span>
+            <span class="span2"> <a class="a1">无法登录</a></span></div>
+             </form>
+        </div>
+
+     </div>
+<script src="bootstrap-3.3.7-dist/jquery-3.1.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

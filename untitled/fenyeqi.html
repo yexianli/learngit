@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        i{width: 4px;
+            height: 11px;
+            margin-right: 5px;
+        display: inline-block;}
+        a{text-decoration: none;
+    color: #0f0f0f;
+            border: 1px solid #e6e6e6;
+            border-right: none;
+        }
+        input{outline: none;
+            width: 21px;
+            height: 20px;}
+        .A{ list-style-type: none;
+        }
+        .A a{background: #f6f6f6;
+            padding: 11px 13px;
+            float: left;
+
+        }
+        .page-btn{margin: 9px 0 5px 5px;
+            padding: 2px 5px;
+            background: #ffac59;
+            border-radius: 2px;
+        color: white}
+        .B{padding: 8px 0;
+            color: #999999;}
+        .B span:first-child{margin-left: 10px;}
+      #box .A li a.current{background-color:#ffac59; }
+        .C a{border: none;
+        background: white;
+        border-left: 1px solid #e6e6e6;
+            padding: 11px 5px;
+        }
+        .D a{border: none;
+            background: white;
+            border-left: 1px solid #e6e6e6;
+            padding: 11px 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+
+<ul class="A">
+    <li><a href="#"><i></i>上一页</a></li>
+    <li> <a href="#">1</a></li>
+    <!--<li class="D"><a href="#">...</a></li>-->
+    <li><a href="#"> 2</a></li>
+    <li><a href="#"> 3</a></li>
+    <li><a href="#"> 4</a></li>
+    <li><a href="#"> 5</a></li>
+    <li class="C"><a href="#">...</a></li>
+    <li><a href="#">15</a></li>
+    <li><a href="#"><i></i>下一页</a></li>
+
+</ul>
+    <div class="B">
+    <span>共15页</span>
+    <span>跳转</span><input type="text" value=" " >
+    <a href="javascript:" class="page-btn">GO</a>
+    </div>
+</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function(){
+        /**
+         * 分页器调用参数
+         * @type {{
+         * page: number, 初始化页数
+         * totalPage: number, 初始化总页数
+          * selectCallback: selectCallback 选择页码回调函数
+          * }}
+         */
+        var params = {
+            page: 1,
+            totalPage: 15,
+            selectCallback: function (p) {
+                console.log(p)
+            }
+        };
+        Pagination(params)
+        var box = $('#box');
+        var count = box.find('.A li a');
+        var index=1;
+
+        var n=params.totalPage
+
+        $(count[1]).addClass("current");
+
+
+        $(count[7]).text(parseInt(n))
+
+
+
+        $(".page-btn").on("click",function () {
+           index= $("input[type='text']").val()
+            if(index>=5&&index<=n-1)
+            {
+                count.removeClass("current");
+                $(count[5]).text(index).addClass("current")
+                $(count[5-1]).text(index-1)
+                $(count[5-2]).text(index-2)
+                $(count[5-3]).text(index-3)
+                $(count[5-4]).text(index-4)
+
+            }
+            if(index==n){
+                count.removeClass("current");
+                $(count[7]).text(index).addClass("current")
+            }
+            if(index==5) {
+                count.removeClass("current");
+                $(count[5]).text(5).addClass("current")
+                $(count[5-1]).text(4)
+                $(count[5-2]).text(3)
+                $(count[5-3]).text(2)
+                $(count[5-4]).text(1)
+
+            }
+            if(index==4) {
+                count.removeClass("current");
+                $(count[5]).text(5)
+                $(count[5-1]).text(4).addClass("current")
+                $(count[5-2]).text(3)
+                $(count[5-3]).text(2)
+                $(count[5-4]).text(1)
+
+            }
+            if(index==3) {
+                count.removeClass("current");
+                $(count[5]).text(5)
+                $(count[5-1]).text(4)
+                $(count[5-2]).text(3).addClass("current")
+                $(count[5-3]).text(2)
+                $(count[5-4]).text(1)
+
+            }
+            if(index==2) {
+                count.removeClass("current");
+                $(count[5]).text(5)
+                $(count[5-1]).text(4)
+                $(count[5-2]).text(3)
+                $(count[5-3]).text(2).addClass("current")
+                $(count[5-4]).text(1)
+
+            }
+            if(index==1) {
+                count.removeClass("current");
+                $(count[5]).text(5)
+                $(count[5-1]).text(4)
+                $(count[5-2]).text(3)
+                $(count[5-3]).text(2)
+                $(count[5-4]).text(1).addClass("current")
+
+            }
+        })
+//for(var i=1;i++;i<6)
+//{
+//        count[i].on("click",function () {
+//            count.removeClass('current');
+//            event.target.addClass("current");
+//
+//        })
+//}
+
+
+
+
+
+
+        box.find(".A li a:first").on("click",function () {
+if(index>1)
+{console.log(--index)}
+            if(index>4&&index<n)
+            {
+                $(count[5]).text(index).addClass("current")
+                $(count[5-1]).text(index-1)
+                $(count[5-2]).text(index-2)
+                $(count[5-3]).text(index-3)
+                $(count[5-4]).text(index-4)
+
+            }
+            if(index==n-2)
+            {$(".C").show()
+//
+                }
+            if(index==n-1)
+            {
+//
+                $(count[7]).removeClass("current")}
+
+
+            if(index<6&&index>0)
+            {
+                count.removeClass('current')
+                $(count[index]).addClass("current");}
+
+
+
+
+
+        })
+        box.find(".A li a:last").on("click",function () {
+if(index<n)
+{ console.log(++index)}
+
+if(index>4&&index<n)
+{
+    $(count[5]).text(index).addClass("current")
+    $(count[5-1]).text(index-1)
+    $(count[5-2]).text(index-2)
+    $(count[5-3]).text(index-3)
+    $(count[5-4]).text(index-4)
+
+   }
+   if(index==n-1){$(".C").hide()}
+   if(index==n)
+   {
+       count.removeClass('current')
+       $(count[7]).text(index).addClass("current")}
+
+
+
+            $(".D").hide()
+if(index<6)
+{
+    count.removeClass('current')
+    $(count[index]).addClass("current");}
+
+
+
+
+
+        })
+//        $("a:contains('1')").addClass("current");
+
+    function Pagination() {
+
+
+    }
+        Pagination()
+    })
+
+
+
+</script>
+</body>
+</html>

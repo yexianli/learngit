@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+form{position: relative;}
+        body {
+            background-image: url("js/river.jpg");
+            width: 1229px;
+            height: 690px;
+            margin: 0 auto;
+            overflow: hidden
+        }
+
+        /*#box_0{position: relative;}*/
+        #box {
+            width: 300px;
+            height: 200px;
+            display: none;
+            /*padding-top: 10px;*/
+            position: absolute;
+            top: 100px;
+            left: 126px;
+
+            /*background-color: #0f88eb;*/
+
+        }
+
+        #box_1 {
+            width: 300px;
+            height: 150px;
+            background: lightgray;
+            color: #f7f7f7;
+        }
+
+        #box_2 {
+            padding-top: 1px
+        }
+
+        h2 {
+            color: #ffffff;
+            background-color: #0f88eb
+        }
+
+        p {
+            width: 300px;
+            height: 113px;
+            padding-top: 15px;
+        }
+
+        button {
+            margin-left: 71px;
+            size: 30px;
+            cursor: pointer;
+            background-color: greenyellow;
+            font-size: medium;
+            color: #FFFFFF;
+            border: solid 1px #0F86F0;
+        }
+
+        #box_0 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+        }
+        .a{float: right;}
+        form{position:relative;}
+        .b{position: absolute;
+        top:45px;
+        left: 55px;}
+
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        function tip(opts) {
+            var defaultOpts = {
+                title: '提示框',
+                content: '是否确认？',
+                success: function () {
+                },
+                cancel: function () {
+                }
+            }
+
+        }
+        $(document).ready(function () {
+            $('#button').on('click', function () {
+//                $('#box').css({"display": "block"});
+                tip({
+                    success:function () {
+                        console.log('success')
+                    },
+                    cancel:function () {
+                        console.log('cancel')
+                    }
+                })
+                return false
+            })
+
+//            $('#button_1').on('click', function () {
+////                $('form').submit();
+//                $.ajax({
+//                    type: 'post', // 提交方式 get/post
+//                    url: '随便.html', // 需要提交的 url
+//                    data: {
+//                        'title': title,
+//                        'content': content
+//                    },
+//                    success: function (data) { // data 保存提交后返回的数据，一般为 json 数据
+//// 此处可对 data 作相关处理
+//                        alert('提交成功！');
+//                    }
+//                })
+//            })
+//            $('#button_2').on('click', function () {
+//                $('#box').css({"display": "none"})
+//            })
+        })
+    </script>
+</head>
+<body>
+<div id="box_0">
+    <form>
+        <div class="a">title：<input type="text"></div>
+        <div class="a">content：<input type="text"></div>
+        <!--<input type="submit" value="提交">-->
+         
+        <button  class="b" type="submit" id="button">submit</button>
+        <div id="box">
+
+            <h2>自定义对话框</h2>
+            <div id="box_1">
+                <p>确定提交内容</p>
+                <div id="box_2">
+                    <button id="button_1">确定</button>
+                    <button id="button_2">取消</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
+</body>
+</html>
