@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页器上一页下一页功能和跳转功能</title>
+    <style>
+        i {
+            width: 4px;
+            height: 11px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0f0f0f;
+            border: 1px solid #e6e6e6;
+            border-right: none;
+        }
+
+        input {
+            outline: none;
+            width: 21px;
+            height: 20px;
+        }
+
+        .page {
+            list-style-type: none;
+        }
+
+        .page a {
+            background: #f6f6f6;
+            padding: 11px 13px;
+            float: left;
+
+        }
+
+        .page-btn {
+            margin: 9px 0 5px 5px;
+            padding: 2px 5px;
+            background: #ffac59;
+            border-radius: 2px;
+            color: white
+        }
+
+        .total {
+            padding: 8px 0;
+            color: #999999;
+        }
+
+        .total span:first-child {
+            margin-left: 10px;
+        }
+
+        .page .current {
+            background-color: #ffac59;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+
+<div id="box1">
+</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/pagination.js"></script>
+<script>
+    // 页面初始化完成
+    $(document).ready(function () {
+        /**
+         * 分页器调用参数
+         * @type {{
+         * page: number, 初始化页数
+         * totalPage: number, 初始化总页数
+         * selectCallback: selectCallback 选择页码回调函数
+         * }}
+         */
+        var params = {
+            page: 1,
+            totalPage: 10,
+            selectCallback: function (p) {
+                console.log(p)
+            }
+        }
+        // 调用自己编写的pagination插件
+        $("#box").pagination(params)
+
+
+        var params1 = {
+            page: 5,
+            totalPage: 20,
+            selectCallback: function (p) {
+                console.log(this)
+            }
+        }
+        // 链式调用
+        $("#box1").pagination(params1).css('margin-top','30px')
+
+    })
+
+
+</script>
+</body>
+</html>

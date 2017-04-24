@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url("images/beij.jpg");
+            width: 1229px;
+            height: 690px;
+            margin: 0 auto;
+            overflow: hidden
+        }
+
+        .nav1 {
+            background-color: #0f0f0f;
+            height: 43px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .first {
+        }
+
+        .first li {
+            float: left;
+            padding: 12px 17px;
+            font-size: 13px;
+            z-index: 6
+        }
+
+        .first li:first-child {
+            margin-left: 38px
+        }
+
+        .first li a {
+            color: #9a9a9a;
+        }
+
+        .first li a:hover {
+            color: white;
+        }
+
+        .second li {
+            float: right;
+            padding: 1px 17px;
+            font-size: 13px;
+
+        }
+
+        .second li a {
+            color: #9a9a9a;
+        }
+
+        .second li a:hover {
+            color: white;
+        }
+
+        .search {
+            position: absolute;
+            margin-top: 108px;
+            margin-left: 110px;
+            z-index: 77;
+        }
+
+        .search .btn {
+            margin-left: 495px;
+            margin-top: -8px;
+            background-color: deepskyblue;
+        }
+
+        .search input {
+            position: absolute;
+            width: 486px;
+            background-color: #fff;
+            margin: 6px 1px 0 9px;
+            border-right: 0;
+            padding-left: 4px;
+            padding-right: 4px;
+            height: 33px;
+            border: none;
+            outline: none;
+
+        }
+
+        nav {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #9a9a9a
+        }
+
+        nav a {
+            color: #9a9a9a;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .tanc {
+            background-color: white;
+            width: 320px;
+            z-index: 7;
+            position: absolute;
+            right: 0px;
+            top: 43px;
+            display: none;
+        }
+
+        .tanc .sml {
+
+            font-size: 13px;
+            height: 17px;
+
+            width: 208px;
+
+        }
+
+        .tanc a {
+            display: block;
+
+            color: black;
+
+        }
+
+        .tanc a:hover {
+            background-color: #f5f5f5;
+            text-decoration: none;
+        }
+
+        .tanc .panel a > div {
+            position: relative;
+            margin-left: 62px;
+            margin-top: 4px;
+            height: 65px;
+            font-size: 16px;
+        }
+
+        .tanc .panela div {
+            padding: 4px 3px;
+        }
+
+        .tanc .panel a:last-of-type {
+            height: 40px;
+        }
+
+        .tanc p {
+            height: 30px;
+            position: relative;
+            top: 7px;
+            right: -46px;
+        }
+
+        .tanc .panel {
+            display: none;
+        }
+
+        .tanc .panelo {
+            display: none;
+            position: relative;
+            margin-left: 32px;
+        }
+
+        .xifu {
+            position: absolute;
+            bottom: 30px;
+            right: 10px;
+        }
+
+        .xifu a {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            padding-left: 24px
+        }
+
+        .xifu a:hover {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .div1 {
+            width: 440px;
+            height: 520px;
+            opacity: 0.8;
+            background-color: #0f0f0f;
+
+            word-wrap: break-word;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 13px;
+
+            z-index: -1;
+            overflow-x: hidden;
+        }
+
+        .div1 .header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 7px;
+
+        }
+
+        .div1 img {
+            width: 365px;
+            height: 220px;
+            margin: 48px 39px 43px 41px;
+        }
+
+        .div1 p {
+            margin-left: 39px;
+            margin-right: 35px;
+        }
+
+        .div2 {
+            width: 440px;
+            height: 80px;
+            background-color: black;
+            opacity: 0.8;
+            z-index: -1;
+            position: absolute;
+        }
+
+        .ani {
+            transition: all 1.5s ease-out;
+            position: absolute;
+            right: -440px;
+            bottom: 0;
+            width: 440px;
+            height: 600px;
+            z-index: -1
+        }
+
+        .mask {
+            display: none;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 43px;
+            right: 0px;
+            z-index: 5
+        }
+
+        .mas {
+            display: none;
+            background-color: black;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 43px;
+            bottom: 40px;
+            z-index: 5
+
+        }
+
+        .myDiv {
+            background-color: white;
+            display: none;
+            width: 486px;
+            z-index: 77;
+        }
+
+        .myDiv .sa_drw {
+            list-style-type: none;
+            font-size: 15px;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+
+        .myDiv .sa_drw li:hover {
+            background-color: lightgray;
+        }
+
+    </style>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var sa_as = $('.sa_as');
+            var li = sa_as.find('.sa_tm li')
+            console.log($('.myDiv'))
+            console.log(li)
+            $(".flip").click(function () {
+                $(".panel").slideToggle("slow");
+            });
+            $(".flipo").click(function () {
+                $(".panelo").slideToggle("slow");
+            });
+            $('.second li:first-child').click(function () {
+
+                $(".tanc").slideToggle("slow");
+                $('.mask').show()
+
+                return false
+            })
+
+            $('.mask').click(function () {
+
+                $(".tanc").slideUp("slow");
+                $(this).hide()
+
+                return false
+            })
+
+
+            var imageList = ['images/beij.jpg', 'images/beiji1.jpg', 'images/beiji2.jpg', 'images/beiji3.jpg']
+            console.log(imageList)
+            var len = imageList.length;
+            var index = 1;
+            if (index < len) {
+                $('.left').on('click', function () {
+                    console.log(imageList[index])
+                    $("body").css({'background-image': 'url(' + imageList[index++] + ')'})
+
+                    if (index > 3) {
+                        index = 0
+                    }
+
+                    console.log(imageList[index])
+                    console.log(index)
+                    return false
+
+                })
+            }
+            if (index >= 0) {
+                $('.right').on('click', function () {
+                    console.log(imageList[index])
+                    $("body").css({'background-image': 'url(' + imageList[index--] + ')'})
+                    if (index < 0) {
+                        index = 3
+                    }
+
+                    console.log(index)
+                    return false
+
+                })
+            }
+            $('.i').on('click', function () {
+                ture = $('.ani').css('right') == '-440px'
+                if (ture) {
+                    $('.ani').css('right', '0')
+                }
+                else {
+                    $('.ani').css('right', '-440px')
+                }
+                return false
+            })
+            $('.input').on('keyup', function () {
+                $('.mas').show()
+                $.ajax({
+                    type: "get",
+                    url: "http://cn.bing.com/AS/Suggestions?pt=page.home&mkt=zh-cn&cp=1&cvid=07D4E9F44D064E6F9DC76FC60B269A9F",
+                    data: {
+                        qry: $(this).val()
+                    },
+                    success: function (msg) {
+                        $('.myDiv').html(msg)
+                    }
+                });
+
+                return false
+            })
+            $('.mas').click(function () {
+
+
+                $(this).hide()
+                $('.myDiv').hide()
+
+                return false
+            });
+
+            $('.input').bind('click', function () {
+//            var jqueryInput = $(this);
+//            var searchText = jqueryInput.val();
+//            $.get('http://api.bing.com/qsonhs.aspx?q='+searchText);
+
+                $('.myDiv').css({
+                    top: $('.input').offset().top + $('.input').height(),
+                    left: $('.input').offset().left,
+                    position: 'absolute'
+                }).show();
+            })
+            $('.btn').bind('click', function (event) {
+                var search = $('.input').val()
+                window.location.href = 'http://cn.bing.com/search?qs=n&form=QBLH&sp=-1&pq=111&sc=8-3&sk=&cvid=4875FF19F490486AB0E55602A314FB3C&q=' + search
+                return false
+            })
+
+            $('.myDiv').delegate('li', 'click', function () {
+                var keyword = $(this).text();
+                console.log(keyword)
+                window.location.href = 'http://cn.bing.com/search?qs=n&form=QBLH&sp=-1&pq=111&sc=8-3&sk=&cvid=4875FF19F490486AB0E55602A314FB3C&q='+keyword
+                return false
+            })
+        });
+
+    </script>
+</head>
+<body>
+
+<div>
+    <div class="nav1">
+        <ul class="first">
+            <li><a href="#">图片</a></li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">学术</a></li>
+            <li><a href="#">词典</a></li>
+            <li><a href="#">地图</a></li>
+            <li><a href="#">|</a></li>
+            <li><a href="#">Office Online</a></li>
+            <li><a href="#">Outlook.com</a></li>
+
+        </ul>
+        <ul class="second">
+
+
+            <li><a href=""><span class="glyphicon glyphicon-th-list"></span></a></li>
+
+
+            <li><a href="#">登录 <span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="#">Switch to Bing in English</a></li>
+        </ul>
+
+    </div>
+    <div class="search">
+        <form>
+            <img src="images/hp_zh_cn.png" alt="">
+            <input type="text" class="input">
+            <button class="btn"><span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+    </div>
+    <div class="tanc">
+        <p class="flip"><span class="glyphicon glyphicon-cog"></span>设置
+            <span class="glyphicon glyphicon-menu-down"></span></p>
+        <div class="panel">
+            <a href="">
+                <div>
+                    <div>语言</div>
+
+                    <div class="sml">简体中文</div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div>国家/地区</div>
+
+                    <div class="sml">中华人民共和国</div>
+                </div>
+            </a>
+
+            <a href="">
+                <div>更多</div>
+            </a>
+        </div>
+        <p><a href=""> 搜索历史记录</a></p>
+        <p><a href="">反馈</a></p>
+        <p><a href="">安全搜索</a></p>
+        <p class="flipo">自定义主页
+            <span class="glyphicon glyphicon-menu-down"></span></p>
+        <div class="panelo"><a href="">
+            显示菜单栏</a>
+
+        </div>
+    </div>
+    <div class="xifu">
+        <a href="" class="left"><span><</span></a>
+        <a href="" class="right"><span>> </span></a>
+        <a href="" class="i"><span class="glyphicon glyphicon-info-sign"></span></a>
+    </div>
+    <nav>
+        <a href="">© 2017 Microsoft</a>|<a href="">© 2017 Microsoft</a>|
+        <a href="">京公网安备11010802022657号</a>|
+        <a href="">隐私声明和 Cookie</a>|<a href="">法律声明</a>|
+        <a href="">广告</a>|<a href="">举报问题</a>|
+        <a href="">帮助</a>| <a href="">反馈</a>
+    </nav>
+    <div class="ani">
+        <div class="div1">
+
+            <img src="images/beij.jpg">
+            <p class="header">日光下已无新事</p>
+            <p>就要一直在路上</p>
+            <p>
+                帕亚那空山洞中的“宝座”是泰国国王朱拉隆功在19世纪末期建造的。
+                它位于三百峰国家公园内，因此许多游客来到泰国海湾的国家公园时也
+                会到山洞中看看这个古老的“宝座”。洞顶有一个天然的通风口，形成
+                天然的光源，当阳光由洞穴顶端射入“宝座”顶时，那种金碧辉煌的景观，令人叹为观止。
+                文/时尚旅游
+                兰岛，又称珊瑚岛、金沙岛，是芭堤雅的一座小型离岛，
+                离芭堤雅海岸约7.5公里。兰岛周围海域水质洁净，可透视水深达数米之
+                下的海底生物世界。离珊瑚岛西岸不远的海底，有大片美丽的珊瑚，可乘
+                玻璃底观光小船饱览海底奇景，也可以潜入水中更近距离地观赏。岛上有座
+                山峰可以鸟瞰大海和沙滩，山顶有寺庙和观音。浮潜、海上摩托等很多的水上
+                项目。沙滩上到处都是流浪狗。岛上餐饮住宿设施还不齐全，可以从芭堤雅坐
+                渡轮或快艇前往Koh Larn，
+                并在傍晚返回芭堤雅住宿。Koh Pai岛也位于兰岛不远处。
+                兰岛，又称珊瑚岛、金沙岛，是芭堤雅的一座小型离岛，
+                离芭堤雅海岸约7.5公里。兰岛周围海域水质洁净，可透视水深达数米之
+                下的海底生物世界。离珊瑚岛西岸不远的海底，有大片美丽的珊瑚，可乘
+                玻璃底观光小船饱览海底奇景，也可以潜入水中更近距离地观赏。岛上有座
+                山峰可以鸟瞰大海和沙滩，山顶有寺庙和观音。浮潜、海上摩托等很多的水上
+                项目。沙滩上到处都是流浪狗。岛上餐饮住宿设施还不齐全，可以从芭堤雅坐
+                渡轮或快艇前往Koh Larn，
+                并在傍晚返回芭堤雅住宿。Koh Pai岛也位于兰岛不远处。
+                兰岛，又称珊瑚岛、金沙岛，是芭堤雅的一座小型离岛，
+                离芭堤雅海岸约7.5公里。兰岛周围海域水质洁净，可透视水深达数米之
+                下的海底生物世界。离珊瑚岛西岸不远的海底，有大片美丽的珊瑚，可乘
+                玻璃底观光小船饱览海底奇景，也可以潜入水中更近距离地观赏。岛上有座
+                山峰可以鸟瞰大海和沙滩，山顶有寺庙和观音。浮潜、海上摩托等很多的水上
+                项目。沙滩上到处都是流浪狗。岛上餐饮住宿设施还不齐全，可以从芭堤雅坐
+                渡轮或快艇前往Koh Larn，
+                并在傍晚返回芭堤雅住宿。Koh Pai岛也位于兰岛不远处。
+            </p>
+        </div>
+        <div class="div2"></div>
+    </div>
+    <div class="mask"></div>
+    <div class="mas"></div>
+    <div class="myDiv"></div>
+</div>
+</body>
+</html>
